@@ -1,3 +1,3 @@
-function ggpull -w 'git pull origin (git_current_branch)'
-  git pull origin (git_current_branch) $argv
+function ggpull
+  git pull origin (__git_current_branch) $argv
 end

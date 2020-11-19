@@ -1,3 +1,3 @@
-function ggpush
-  git push origin "(__git_current_branch)" $argv
+function ggpush -w 'git push origin (git_current_branch)'
+  git push origin (git_current_branch) $argv
 end

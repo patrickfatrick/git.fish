@@ -1,3 +1,3 @@
-function gloga -w 'git log --oneline --decorate --graph --all'
+function gloga -w 'git log' -d 'Show commit logs'
   git log --oneline --decorate --graph --all $argv
 end

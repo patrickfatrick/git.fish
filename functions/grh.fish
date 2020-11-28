@@ -1,3 +1,3 @@
-function grh -w 'git reset'
+function grh -w 'git reset' -d 'Reset current HEAD to the specified state'
   git reset $argv
 end

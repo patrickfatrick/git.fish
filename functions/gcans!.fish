@@ -1,3 +1,3 @@
-function gcans! -w 'git commit -v -a -s --no-edit --amend'
+function gcans! -w 'git commit' -d 'Record changes to the repository'
   git commit -v -a -s --no-edit --amend $argv
 end

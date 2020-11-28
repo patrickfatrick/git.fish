@@ -1,3 +1,3 @@
-function glg -w 'git log --stat'
+function glg -w 'git log' -d 'Show commit logs'
   git log --stat $argv
 end

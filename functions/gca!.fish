@@ -1,3 +1,3 @@
-function gca! -w 'git commit -v -a --amend'
+function gca! -w 'git commit' -d 'Record changes to the repository'
   git commit -v -a --amend $argv
 end

@@ -1,3 +1,3 @@
-function gss -w 'git status -s'
+function gss -w 'git status' -d 'Show the working tree status'
   git status -s $argv
 end

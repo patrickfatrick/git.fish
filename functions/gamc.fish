@@ -1,3 +1,3 @@
-function gamc -w 'git am --continue'
+function gamc -w 'git am'
   git am --continue $argv
 end

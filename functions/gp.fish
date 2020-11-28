@@ -1,3 +1,3 @@
-function gp -w 'git push'
+function gp -w 'git push' -d 'Update remote refs along with associated objects'
   git push $argv
 end

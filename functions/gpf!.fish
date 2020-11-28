@@ -1,3 +1,3 @@
-function gpf! -w 'git push --force'
+function gpf! -w 'git push' -d 'Update remote refs along with associated objects'
   git push --force $argv
 end

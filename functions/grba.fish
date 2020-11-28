@@ -1,3 +1,3 @@
-function grba -w 'git rebase --abort'
+function grba -w 'git rebase' -d 'Forward-port local commits to the updated upstream head'
   git rebase --abort $argv
 end

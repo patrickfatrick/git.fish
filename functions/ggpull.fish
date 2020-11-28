@@ -1,3 +1,3 @@
-function ggpull
-  git pull origin (__git_current_branch) $argv
+function ggpull -w 'git pull' -d 'alias: ggl'
+  ggl $argv
 end

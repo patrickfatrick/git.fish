@@ -9,13 +9,13 @@
 
 ## Installation
 
-oh-my-fish:
+[oh-my-fish][omf-link]:
 
 ```fish
 $ omf install https://github.com/patrickfatrick/git.fish
 ```
 
-fisher:
+[fisher][fisher-link]:
 ```fish
 $ fisher install patrickfatrick/git.fish
 ```

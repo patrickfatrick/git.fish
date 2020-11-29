@@ -31,6 +31,7 @@ This plugin is wholly written with functions which makes it extremely portable t
 | g                    | git                                                                                                                              |
 | ga                   | git add                                                                                                                          |
 | gaa                  | git add --all                                                                                                                    |
+| gacam                | git add --all; and git commit -m                                                                                                 |
 | gapa                 | git add --patch                                                                                                                  |
 | gau                  | git add --update                                                                                                                 |
 | gav                  | git add --verbose                                                                                                                |
@@ -62,8 +63,9 @@ This plugin is wholly written with functions which makes it extremely portable t
 | gcf                  | git config --list                                                                                                                |
 | gcl                  | git clone --recurse-submodules                                                                                                   |
 | gclean               | git clean -id                                                                                                                    |
-| gpristine            | git reset --hard; and git clean -dffx                                                                                              |
-| gcm                  | git checkout (__git_main_branch)                                                                                                                |
+| gpristine            | git reset --hard; and git clean -dffx                                                                                            |
+| gcm                  | git checkout (__git_main_branch)                  |
+| gcml                 | git checkout (__git_main_branch); and git pull origin (__git_main_branch)                                                        |
 | gcd                  | git checkout develop                                                                                                             |
 | gcmsg                | git commit -m                                                                                                                    |
 | gco                  | git checkout                                                                                                                     |

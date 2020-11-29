@@ -211,5 +211,5 @@ Like Oh-my-zsh, this repo will use `main` as your main branch instrad of master 
 [fisher-link]:    https://github.com/jorgebucaran/fisher
 
 [license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
-[omz-git-plugin]: https://github.com/robbyrussell/oh-my-zsh/wiki/Plugin:git
+[omz-git-plugin]: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git/
 

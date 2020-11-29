@@ -2,7 +2,7 @@
 
 ## git.fish
 
-> A git aliases plugin for Fish shell based on [Oh My Zsh Git Plugin][omz-git-plugin] and [plugin-git][orig-plugin]
+> A git aliases plugin for Fish shell based on [Oh My Zsh Git Plugin][omz-git-plugin] and [jhillyerd/plugin-git][orig-plugin]
 
 [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
 [![Fish Shell Version](https://img.shields.io/badge/fish-v3.1.0-007EC7.svg?style=flat-square)](https://fishshell.com)

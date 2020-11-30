@@ -1,4 +1,4 @@
-<img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="144px" height="144px"/>
+<img src="https://github.com/fish-shell/fish-shell/blob/master/doc_src/python_docs_theme/static/fish.png?raw=true" align="left" width="144px" height="144px"/>
 
 ## git.fish
 

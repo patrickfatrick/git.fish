@@ -40,7 +40,7 @@ This plugin is wholly written with functions which makes it extremely portable t
 | gb                   | git branch                                                                                                                       |
 | gba                  | git branch -a                                                                                                                    |
 | gbd                  | git branch -d                                                                                                                    |
-| gbda                 | git branch --no-color --merged \| command grep -vE "^(\+\|\*\|\s*((__git_main_branch)\|development\|develop\|devel\|dev)\s*$)" \| command xargs -n 1 git branch -d |
+| gbda                 | git branch --no-color --merged \| command grep -vE "^(\+\|\*\|\s*((git_main_branch)\|development\|develop\|devel\|dev)\s*$)" \| command xargs -n 1 git branch -d |
 | gbD                  | git branch -D                                                                                                                    |
 | gbl                  | git blame -b -w                                                                                                                  |
 | gbnm                 | git branch --no-merged                                                                                                           |
@@ -64,8 +64,8 @@ This plugin is wholly written with functions which makes it extremely portable t
 | gcl                  | git clone --recurse-submodules                                                                                                   |
 | gclean               | git clean -id                                                                                                                    |
 | gpristine            | git reset --hard; and git clean -dffx                                                                                            |
-| gcm                  | git checkout (__git_main_branch)                  |
-| gcml                 | git checkout (__git_main_branch); and git pull origin (__git_main_branch)                                                        |
+| gcm                  | git checkout (git_main_branch)                  |
+| gcml                 | git checkout (git_main_branch); and git pull origin (git_main_branch)                                                        |
 | gcd                  | git checkout develop                                                                                                             |
 | gcmsg                | git commit -m                                                                                                                    |
 | gco                  | git checkout                                                                                                                     |
@@ -89,21 +89,21 @@ This plugin is wholly written with functions which makes it extremely portable t
 | gfo                  | git fetch origin                                                                                                                 |
 | gg                   | git gui citool                                                                                                                   |
 | gga                  | git gui citool --amend                                                                                                           |
-| ggf                  | git push --force origin (__git_current_branch)                                                                                        |
-| ggfl                 | git push --force-with-lease origin (__git_current_branch)                                                                             |
-| ggl                  | git pull origin (__git_current_branch)                                                                                                |
-| ggp                  | git push origin (__git_current_branch)                                                                                                |
+| ggf                  | git push --force origin (git_current_branch)                                                                                        |
+| ggfl                 | git push --force-with-lease origin (git_current_branch)                                                                             |
+| ggl                  | git pull origin (git_current_branch)                                                                                                |
+| ggp                  | git push origin (git_current_branch)                                                                                                |
 | ggpnp                | ggl; and ggp                                                                                                                       |
-| ggpull               | git pull origin "(__git_current_branch)"                                                                                          |
+| ggpull               | git pull origin "(git_current_branch)"                                                                                          |
 | ggpur                | ggu                                                                                                                              |
-| ggpush               | git push origin "(__git_current_branch)"                                                                                          |
-| ggsup                | git branch --set-upstream-to=origin/(__git_current_branch)                                                                        |
-| ggu                  | git pull --rebase origin (__git_current_branch)                                                                                       |
-| gpsup                | git push --set-upstream origin (__git_current_branch)                                                                             |
+| ggpush               | git push origin "(git_current_branch)"                                                                                          |
+| ggsup                | git branch --set-upstream-to=origin/(git_current_branch)                                                                        |
+| ggu                  | git pull --rebase origin (git_current_branch)                                                                                       |
+| gpsup                | git push --set-upstream origin (git_current_branch)                                                                             |
 | ghh                  | git help                                                                                                                         |
 | gignore              | git update-index --assume-unchanged                                                                                              |
 | gignored             | git ls-files -v \| grep "^[[:lower:]]"                                                                                           |
-| git-svn-dcommit-push | git svn dcommit; and git push github (__git_main_branch):svntrunk                                                                                 |
+| git-svn-dcommit-push | git svn dcommit; and git push github (git_main_branch):svntrunk                                                                                 |
 | gk                   | gitk --all --branches                                                                                                            |
 | gke                  | gitk --all (git log -g --pretty=%h)                                                                                             |
 | gl                   | git pull                                                                                                                         |
@@ -122,10 +122,10 @@ This plugin is wholly written with functions which makes it extremely portable t
 | gloga                | git log --oneline --decorate --graph --all                                                                                       |
 | glp                  | git log --pretty=\<format\>                                                                                                      |
 | gm                   | git merge                                                                                                                        |
-| gmom                 | git merge origin/(__git_main_branch)                                                                                                            |
+| gmom                 | git merge origin/(git_main_branch)                                                                                                            |
 | gmt                  | git mergetool --no-prompt                                                                                                        |
 | gmtvim               | git mergetool --no-prompt --tool=vimdiff                                                                                         |
-| gmum                 | git merge upstream/(__git_main_branch)                                                                                                          |
+| gmum                 | git merge upstream/(git_main_branch)                                                                                                          |
 | gma                  | git merge --abort                                                                                                                |
 | gp                   | git push                                                                                                                         |
 | gpd                  | git push --dry-run                                                                                                               |
@@ -141,13 +141,13 @@ This plugin is wholly written with functions which makes it extremely portable t
 | grbc                 | git rebase --continue                                                                                                            |
 | grbd                 | git rebase develop                                                                                                               |
 | grbi                 | git rebase -i                                                                                                                    |
-| grbm                 | git rebase (__git_main_branch)                                                                                                                  |
+| grbm                 | git rebase (git_main_branch)                                                                                                                  |
 | grbs                 | git rebase --skip                                                                                                                |
 | grename <old> <new>  | Rename `old` branch to `new`, including in origin remote                     |
 | grev                 | git revert                                                                                                                       |
 | grh                  | git reset                                                                                                                        |
 | grhh                 | git reset --hard                                                                                                                 |
-| groh                 | git reset origin/(__git_current_branch) --hard                                                                                    |
+| groh                 | git reset origin/(git_current_branch) --hard                                                                                    |
 | grm                  | git rm                                                                                                                           |
 | grmc                 | git rm --cached                                                                                                                  |
 | grmv                 | git remote rename                                                                                                                |
@@ -189,7 +189,7 @@ This plugin is wholly written with functions which makes it extremely portable t
 | gupv                 | git pull --rebase -v                                                                                                             |
 | gupa                 | git pull --rebase --autostash                                                                                                    |
 | gupav                | git pull --rebase --autostash -v                                                                                                 |
-| glum                 | git pull upstream (__git_main_branch)                                                                                                           |
+| glum                 | git pull upstream (git_main_branch)                                                                                                           |
 | gwch                 | git whatchanged -p --abbrev-commit --pretty=medium                                                                               |
 | gwip                 | git add -A; git rm (git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign -m "--wip-- [skip ci]"           |
 | gam                  | git am                                                                                                                           |

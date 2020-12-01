@@ -1,4 +1,4 @@
-function __git_current_branch -d "Output git's current branch name"
+function git_current_branch -d "Output the current branch name"
   begin
     git symbolic-ref HEAD; or \
     git rev-parse --short HEAD; or return

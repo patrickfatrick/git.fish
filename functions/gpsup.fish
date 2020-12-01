@@ -1,3 +1,3 @@
 function gpsup
-  git push --set-upstream origin (__git_current_branch) $argv
+  git push --set-upstream origin (git_current_branch) $argv
 end

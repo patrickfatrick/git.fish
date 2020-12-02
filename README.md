@@ -32,6 +32,7 @@ This plugin is wholly written with functions which makes it extremely portable t
 | ga                   | git add                                                                                                                          |
 | gaa                  | git add --all                                                                                                                    |
 | gacam                | git add --all; and git commit -m                                                                                                 |
+| gacamb               | gaa; and git commit -m (echo [(git_current_branch)] $argv)                                                                     |
 | gapa                 | git add --patch                                                                                                                  |
 | gau                  | git add --update                                                                                                                 |
 | gav                  | git add --verbose                                                                                                                |
@@ -58,7 +59,9 @@ This plugin is wholly written with functions which makes it extremely portable t
 | gcan!                | git commit -v -a --no-edit --amend                                                                                               |
 | gcans!               | git commit -v -a -s --no-edit --amend                                                                                            |
 | gcam                 | git commit -a -m                                                                                                                 |
+| gcamb                | git commit -a -m (echo [(git_current_branch)] $argv)                                                                             |
 | gcsm                 | git commit -s -m                                                                                                                 |
+| gcsmb                | git commit -s -m (echo [(git_current_branch)] $argv)                                                                             |
 | gcb                  | git checkout -b                                                                                                                  |
 | gcf                  | git config --list                                                                                                                |
 | gcl                  | git clone --recurse-submodules                                                                                                   |

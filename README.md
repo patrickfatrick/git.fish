@@ -2,7 +2,7 @@
 
 ## git.fish
 
-> A git aliases plugin for Fish shell based on [Oh My Zsh Git Plugin][omz-git-plugin] and [jhillyerd/plugin-git][orig-plugin]
+> A collection of git functions for Fish shell based on [Oh My Zsh Git Plugin][omz-git-plugin] and [jhillyerd/plugin-git][orig-plugin]
 
 [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
 [![Fish Shell Version](https://img.shields.io/badge/fish-v3.1.0-007EC7.svg?style=flat-square)](https://fishshell.com)
@@ -22,9 +22,11 @@ $ fisher install patrickfatrick/git.fish
 
 ## Why?
 
-This plugin is wholly written with functions which makes it extremely portable to different plugin managers and relies on no initialization logic. Meaning, it does nto slow down shell startup time. Abbreviations might be a little nicer of an experience but the inability to use abbreviations for some (more complex) aliases might be annoying to some (myself included).
+This plugin is wholly written with fish functions which makes it extremely portable to different plugin managers and relies on no initialization logic. Meaning, it does not slow down shell startup time. Abbreviations are nice but their simplicity means some features here can't be done like that, and I like consistency.
 
-## Aliases
+## Aliases*
+
+*My additions are in bold.
 
 | Alias                | Command                                                                                                                          |
 |:---------------------|:---------------------------------------------------------------------------------------------------------------------------------|
@@ -32,7 +34,7 @@ This plugin is wholly written with functions which makes it extremely portable t
 | ga                   | git add                                                                                                                          |
 | gaa                  | git add --all                                                                                                                    |
 | gacam                | git add --all; and git commit -m                                                                                                 |
-| gacamb               | gaa; and git commit -m (echo [(git_current_branch)] $argv)                                                                     |
+| _gacamb_             | gaa; and git commit -m (echo [(git_current_branch)] $argv)                                                                     |
 | gapa                 | git add --patch                                                                                                                  |
 | gau                  | git add --update                                                                                                                 |
 | gav                  | git add --verbose                                                                                                                |
@@ -59,16 +61,16 @@ This plugin is wholly written with functions which makes it extremely portable t
 | gcan!                | git commit -v -a --no-edit --amend                                                                                               |
 | gcans!               | git commit -v -a -s --no-edit --amend                                                                                            |
 | gcam                 | git commit -a -m                                                                                                                 |
-| gcamb                | git commit -a -m (echo [(git_current_branch)] $argv)                                                                             |
+| _gcamb_              | git commit -a -m (echo [(git_current_branch)] $argv)                                                                             |
 | gcsm                 | git commit -s -m                                                                                                                 |
-| gcsmb                | git commit -s -m (echo [(git_current_branch)] $argv)                                                                             |
+| _gcsmb_              | git commit -s -m (echo [(git_current_branch)] $argv)                                                                             |
 | gcb                  | git checkout -b                                                                                                                  |
 | gcf                  | git config --list                                                                                                                |
 | gcl                  | git clone --recurse-submodules                                                                                                   |
 | gclean               | git clean -id                                                                                                                    |
 | gpristine            | git reset --hard; and git clean -dffx                                                                                            |
 | gcm                  | git checkout (git_main_branch)                  |
-| gcml                 | git checkout (git_main_branch); and git pull origin (git_main_branch)                                                        |
+| _gcml_               | git checkout (git_main_branch); and git pull origin (git_main_branch)                                                        |
 | gcd                  | git checkout develop                                                                                                             |
 | gcmsg                | git commit -m                                                                                                                    |
 | gco                  | git checkout                                                                                                                     |
@@ -192,7 +194,7 @@ This plugin is wholly written with functions which makes it extremely portable t
 | gupv                 | git pull --rebase -v                                                                                                             |
 | gupa                 | git pull --rebase --autostash                                                                                                    |
 | gupav                | git pull --rebase --autostash -v                                                                                                 |
-| glum                 | git pull upstream (git_main_branch)                                                                                                           |
+| glum                 | git pull upstream (git_main_branch)                                                                                              |
 | gwch                 | git whatchanged -p --abbrev-commit --pretty=medium                                                                               |
 | gwip                 | git add -A; git rm (git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign -m "--wip-- [skip ci]"           |
 | gam                  | git am                                                                                                                           |
@@ -204,6 +206,10 @@ This plugin is wholly written with functions which makes it extremely portable t
 ### Main branch preference
 
 Like Oh-my-zsh, this repo will use `main` as your main branch instrad of master if that branch exists.
+
+### Caveats
+
+I have not personally tested every function in this repo. They were largely converted from the commands in oh-my-zsh to fish.
 
 # License
 

@@ -24,7 +24,7 @@ $ fisher install patrickfatrick/git.fish
 
 This plugin is wholly written with fish functions which makes it extremely portable to different plugin managers and relies on no initialization logic. Meaning, it does not slow down shell startup time. Abbreviations are nice but their simplicity means some features here can't be done like that, and I like consistency.
 
-## Aliases*
+## Functions*
 
 *My additions are in bold.
 
@@ -69,8 +69,8 @@ This plugin is wholly written with fish functions which makes it extremely porta
 | gcl                  | git clone --recurse-submodules                                                                                                   |
 | gclean               | git clean -id                                                                                                                    |
 | gpristine            | git reset --hard; and git clean -dffx                                                                                            |
-| gcm                  | git checkout (git_main_branch)                  |
-| _gcml_               | git checkout (git_main_branch); and git pull origin (git_main_branch)                                                        |
+| gcm                  | git checkout (git_main_branch)                    |
+| _gcml_               | git checkout (git_main_branch); and git pull origin (git_main_branch)                                                           |
 | gcd                  | git checkout develop                                                                                                             |
 | gcmsg                | git commit -m                                                                                                                    |
 | gco                  | git checkout                                                                                                                     |
@@ -82,11 +82,11 @@ This plugin is wholly written with fish functions which makes it extremely porta
 | gd                   | git diff                                                                                                                         |
 | gdca                 | git diff --cached                                                                                                                |
 | gdcw                 | git diff --cached --word-diff                                                                                                    |
-| gdct                 | git describe --tags (git rev-list --tags --max-count=1)                                                                         |
+| gdct                 | git describe --tags (git rev-list --tags --max-count=1)                                                                          |
 | gds                  | git diff --staged                                                                                                                |
 | gdt                  | git diff-tree --no-commit-id --name-only -r                                                                                      |
-| gdnolock             | git diff $argv ":(exclude)package-lock.json" ":(exclude)&ast;.lock"                                                                 |
-| gdv                  | git diff -w $argv \| view -                                                                                                         |
+| gdnolock             | git diff $argv ":(exclude)package-lock.json" ":(exclude)&ast;.lock"                                                                     |
+| gdv                  | git diff -w $argv \| view -                                                                                                      |
 | gdw                  | git diff --word-diff                                                                                                             |
 | gf                   | git fetch                                                                                                                        |
 | gfa                  | git fetch --all --prune                                                                                                          |
@@ -94,23 +94,23 @@ This plugin is wholly written with fish functions which makes it extremely porta
 | gfo                  | git fetch origin                                                                                                                 |
 | gg                   | git gui citool                                                                                                                   |
 | gga                  | git gui citool --amend                                                                                                           |
-| ggf                  | git push --force origin (git_current_branch)                                                                                        |
-| ggfl                 | git push --force-with-lease origin (git_current_branch)                                                                             |
-| ggl                  | git pull origin (git_current_branch)                                                                                                |
-| ggp                  | git push origin (git_current_branch)                                                                                                |
-| ggpnp                | ggl; and ggp                                                                                                                       |
-| ggpull               | git pull origin "(git_current_branch)"                                                                                          |
+| ggf                  | git push --force origin (git_current_branch)                                                                                     |
+| ggfl                 | git push --force-with-lease origin (git_current_branch)                                                                          |
+| ggl                  | git pull origin (git_current_branch)                                                                                             |
+| ggp                  | git push origin (git_current_branch)                                                                                             |
+| ggpnp                | ggl; and ggp                                                                                                                     |
+| ggpull               | git pull origin "(git_current_branch)"                                                                                           |
 | ggpur                | ggu                                                                                                                              |
-| ggpush               | git push origin "(git_current_branch)"                                                                                          |
-| ggsup                | git branch --set-upstream-to=origin/(git_current_branch)                                                                        |
-| ggu                  | git pull --rebase origin (git_current_branch)                                                                                       |
-| gpsup                | git push --set-upstream origin (git_current_branch)                                                                             |
+| ggpush               | git push origin "(git_current_branch)"                                                                                           |
+| ggsup                | git branch --set-upstream-to=origin/(git_current_branch)                                                                         |
+| ggu                  | git pull --rebase origin (git_current_branch)                                                                                    |
+| gpsup                | git push --set-upstream origin (git_current_branch)                                                                              |
 | ghh                  | git help                                                                                                                         |
 | gignore              | git update-index --assume-unchanged                                                                                              |
 | gignored             | git ls-files -v \| grep "^[[:lower:]]"                                                                                           |
-| git-svn-dcommit-push | git svn dcommit; and git push github (git_main_branch):svntrunk                                                                                 |
+| git-svn-dcommit-push | git svn dcommit; and git push github (git_main_branch):svntrunk                                                                  |
 | gk                   | gitk --all --branches                                                                                                            |
-| gke                  | gitk --all (git log -g --pretty=%h)                                                                                             |
+| gke                  | gitk --all (git log -g --pretty=%h)                                                                                              |
 | gl                   | git pull                                                                                                                         |
 | glg                  | git log --stat                                                                                                                   |
 | glgp                 | git log --stat -p                                                                                                                |
@@ -189,19 +189,23 @@ This plugin is wholly written with fish functions which makes it extremely porta
 | gtv                  | git tag \| sort -V                                                                                                               |
 | gtl                  | git tag --sort=-v:refname -n -l $argv[1]\*; noglob gtl                                                                       |
 | gunignore            | git update-index --no-assume-unchanged                                                                                           |
-| gunwip               | git log -n 1 \| grep -q -c "\-\-wip\-\-"; and git reset HEAD~1                                                                     |
+| gunwip               | Undo a wip branch                                                                     |
 | gup                  | git pull --rebase                                                                                                                |
 | gupv                 | git pull --rebase -v                                                                                                             |
 | gupa                 | git pull --rebase --autostash                                                                                                    |
 | gupav                | git pull --rebase --autostash -v                                                                                                 |
 | glum                 | git pull upstream (git_main_branch)                                                                                              |
 | gwch                 | git whatchanged -p --abbrev-commit --pretty=medium                                                                               |
-| gwip                 | git add -A; git rm (git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign -m "--wip-- [skip ci]"           |
+| gwip                 | Commit a wip branch                                                                     |
 | gam                  | git am                                                                                                                           |
 | gamc                 | git am --continue                                                                                                                |
 | gams                 | git am --skip                                                                                                                    |
 | gama                 | git am --abort                                                                                                                   |
-| gamscp               | git am --show-current-patch                                                                                                      |
+| git_current_branch   | Return the name of the current branch                                                                                            |
+| git_main_branch      | Returns the name of the main branch: main if it exists, master otherwise                                                   |
+| git_current_user_name | Returns the user.name config value                                                                                              |
+| git_current_user_email | Returns the user.email config value                                                                                            |
+| git_work_in_progress | Echoes a warning if the current branch is a wip                                                                                  |
 
 ### Main branch preference
 

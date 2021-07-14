@@ -33,8 +33,9 @@ This plugin is wholly written with fish functions which makes it extremely porta
 | g                    | git                                                                                                                              |
 | ga                   | git add                                                                                                                          |
 | gaa                  | git add --all                                                                                                                    |
+| _gaca_                 | git add --all; and git commit -v -a                                                                                            |
 | gacam                | git add --all; and git commit -m                                                                                                 |
-| _gacamb_             | gaa; and git commit -m (echo [(git_current_branch)] $argv)                                                                     |
+| _gacamb_             | gaa; and git commit -m (echo [(git_current_branch)] $argv)                                                                    |
 | gapa                 | git add --patch                                                                                                                  |
 | gau                  | git add --update                                                                                                                 |
 | gav                  | git add --verbose                                                                                                                |

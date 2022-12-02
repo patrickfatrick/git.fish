@@ -75,6 +75,7 @@ This plugin is wholly written with fish functions which makes it extremely porta
 | gcb                  | git checkout -b                                                                                                                  |
 | gcf                  | git config --list                                                                                                                |
 | gcl                  | git clone --recurse-submodules                                                                                                   |
+| gccd                 | git clone --recurse-submodules $argv and cd (basename $argv[-1] .git)                                                            |
 | gclean               | git clean -id                                                                                                                    |
 | gpristine            | git reset --hard; and git clean -dffx                                                                                            |
 | gcm                  | git checkout (git_main_branch)                    |

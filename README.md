@@ -33,9 +33,13 @@ This plugin is wholly written with fish functions which makes it extremely porta
 | g                    | git                                                                                                                              |
 | ga                   | git add                                                                                                                          |
 | gaa                  | git add --all                                                                                                                    |
-| _gaca_                 | git add --all; and git commit -v -a                                                                                            |
+| _gaca_               | git add --all; and git commit -v -a                                                                                              |
 | gacam                | git add --all; and git commit -m                                                                                                 |
-| _gacamb_             | gaa; and git commit -m (echo [(git_current_branch)] $argv)                                                                    |
+| _gacamb_             | gaa; and git commit -m (echo [(git_current_branch)] $argv)                                                                       |
+| gam                  | git am                                                                                                                           |
+| gamc                 | git am --continue                                                                                                                |
+| gams                 | git am --skip                                                                                                                    |
+| gama                 | git am --abort                                                                                                                   |
 | gapa                 | git add --patch                                                                                                                  |
 | gau                  | git add --update                                                                                                                 |
 | gav                  | git add --verbose                                                                                                                |
@@ -44,7 +48,7 @@ This plugin is wholly written with fish functions which makes it extremely porta
 | gb                   | git branch                                                                                                                       |
 | gba                  | git branch -a                                                                                                                    |
 | gbd                  | git branch -d                                                                                                                    |
-| gbda                 | git branch --no-color --merged \| command grep -vE "^(\+\|\*\|\s*((git_main_branch)\|development\|develop\|devel\|dev)\s*$)" \| command xargs -n 1 git branch -d |
+| gbda                 | git branch --no-color --merged \| command grep -vE "^(\+\|\*\|\s*((git_main_branch)\|(git_develop_branch))\s*$)" \| command xargs -n 1 git branch -d |
 | gbD                  | git branch -D                                                                                                                    |
 | gbl                  | git blame -b -w                                                                                                                  |
 | gbnm                 | git branch --no-merged                                                                                                           |
@@ -56,6 +60,7 @@ This plugin is wholly written with fish functions which makes it extremely porta
 | gbss                 | git bisect start                                                                                                                 |
 | gc                   | git commit -v                                                                                                                    |
 | gc!                  | git commit -v --amend                                                                                                            |
+| gcn                  | git commit -v --no-edit                                                                                                          |
 | gcn!                 | git commit -v --no-edit --amend                                                                                                  |
 | gca                  | git commit -v -a                                                                                                                 |
 | gca!                 | git commit -v -a --amend                                                                                                         |
@@ -63,6 +68,8 @@ This plugin is wholly written with fish functions which makes it extremely porta
 | gcans!               | git commit -v -a -s --no-edit --amend                                                                                            |
 | gcam                 | git commit -a -m                                                                                                                 |
 | _gcamb_              | git commit -a -m (echo [(git_current_branch)] $argv)                                                                             |
+| gcas                 | git commit -a -s                                                                                                                 |
+| gcasm                | git commit -a -s -m                                                                                                              |
 | gcsm                 | git commit -s -m                                                                                                                 |
 | _gcsmb_              | git commit -s -m (echo [(git_current_branch)] $argv)                                                                             |
 | gcb                  | git checkout -b                                                                                                                  |
@@ -71,10 +78,11 @@ This plugin is wholly written with fish functions which makes it extremely porta
 | gclean               | git clean -id                                                                                                                    |
 | gpristine            | git reset --hard; and git clean -dffx                                                                                            |
 | gcm                  | git checkout (git_main_branch)                    |
-| _gcml_               | git checkout (git_main_branch); and git pull origin (git_main_branch)                                                           |
-| gcd                  | git checkout develop                                                                                                             |
+| _gcml_               | git checkout (git_main_branch); and git pull origin (git_main_branch)                                                            |
+| gcd                  | git checkout (git_develop_branch)                                                                                                |
 | gcmsg                | git commit -m                                                                                                                    |
 | gco                  | git checkout                                                                                                                     |
+| gcor                 | git checkout --recurse-submodules                                                                                                |
 | gcount               | git shortlog -sn                                                                                                                 |
 | gcp                  | git cherry-pick                                                                                                                  |
 | gcpa                 | git cherry-pick --abort                                                                                                          |
@@ -127,17 +135,20 @@ This plugin is wholly written with fish functions which makes it extremely porta
 | glog                 | git log --oneline --decorate --graph                                                                                             |
 | gloga                | git log --oneline --decorate --graph --all                                                                                       |
 | glp                  | git log --pretty=\<format\>                                                                                                      |
+| gluc                 | git pull upstream (git_current_branch)                                                                                           |
+| glum                 | git pull upstream (git_main_branch)                                                                                              |
 | gm                   | git merge                                                                                                                        |
-| gmom                 | git merge origin/(git_main_branch)                                                                                                            |
+| gmom                 | git merge origin/(git_main_branch)                                                                                               |
 | gmt                  | git mergetool --no-prompt                                                                                                        |
 | gmtvim               | git mergetool --no-prompt --tool=vimdiff                                                                                         |
-| gmum                 | git merge upstream/(git_main_branch)                                                                                                          |
+| gmum                 | git merge upstream/(git_main_branch)                                                                                             |
 | gma                  | git merge --abort                                                                                                                |
 | gp                   | git push                                                                                                                         |
 | gpd                  | git push --dry-run                                                                                                               |
 | gpf                  | git push --force-with-lease                                                                                                      |
 | gpf!                 | git push --force                                                                                                                 |
-| gpoat                | git push origin --all; and git push origin --tags                                                                                  |
+| gpoat                | git push origin --all; and git push origin --tags                                                                                |
+| gpr                  | git pull --rebase                                                                                                                |
 | gpu                  | git push upstream                                                                                                                |
 | gpv                  | git push -v                                                                                                                      |
 | gr                   | git remote                                                                                                                       |
@@ -145,9 +156,11 @@ This plugin is wholly written with fish functions which makes it extremely porta
 | grb                  | git rebase                                                                                                                       |
 | grba                 | git rebase --abort                                                                                                               |
 | grbc                 | git rebase --continue                                                                                                            |
-| grbd                 | git rebase develop                                                                                                               |
+| grbd                 | git rebase (git_develop_branch)                                                                                                  |
 | grbi                 | git rebase -i                                                                                                                    |
-| grbm                 | git rebase (git_main_branch)                                                                                                                  |
+| grbm                 | git rebase (git_main_branch)                                                                                                     |
+| grbo                 | git rebase --onto                                                                                                                |
+| grbom                | git rebase origin/$(git_main_branch)                                                                                             |
 | grbs                 | git rebase --skip                                                                                                                |
 | grename <old> <new>  | Rename `old` branch to `new`, including in origin remote                     |
 | grev                 | git revert                                                                                                                       |
@@ -161,6 +174,7 @@ This plugin is wholly written with fish functions which makes it extremely porta
 | grs                  | git restore                                                                                                                      |
 | grset                | git remote set-url                                                                                                               |
 | grss                 | git restore --source                                                                                                             |
+| grst                 | git restore --staged                                                                                                             |
 | grt                  | cd "(git rev-parse --show-toplevel \|\| echo .)"                                                                                |
 | gru                  | git reset --                                                                                                                     |
 | grup                 | git remote update                                                                                                                |
@@ -186,31 +200,36 @@ This plugin is wholly written with fish functions which makes it extremely porta
 | gsu                  | git submodule update                                                                                                             |
 | gsw                  | git switch                                                                                                                       |
 | gswc                 | git switch -c                                                                                                                    |
+| gswm                 | git switch (git_main_branch)                                                                                                     |
+| gswd                 | git switch (git_develop_branch)                                                                                                  |
 | gts                  | git tag -s                                                                                                                       |
 | gtv                  | git tag \| sort -V                                                                                                               |
-| gtl                  | git tag --sort=-v:refname -n -l $argv[1]\*; noglob gtl                                                                       |
+| gtl                  | git tag --sort=-v:refname -n -l $argv[1]\*; noglob gtl                                                                           |
 | gunignore            | git update-index --no-assume-unchanged                                                                                           |
-| gunwip               | Undo a wip branch                                                                     |
+| gunwip               | Undo a wip branch                                                                                                                |
 | gup                  | git pull --rebase                                                                                                                |
 | gupv                 | git pull --rebase -v                                                                                                             |
 | gupa                 | git pull --rebase --autostash                                                                                                    |
 | gupav                | git pull --rebase --autostash -v                                                                                                 |
-| glum                 | git pull upstream (git_main_branch)                                                                                              |
+| gupom                | git pull --rebase origin $(git_main_branch)                                                                                      |
+| gupomi               | git pull --rebase=interactive origin $(git_main_branch)                                                                          |
 | gwch                 | git whatchanged -p --abbrev-commit --pretty=medium                                                                               |
-| gwip                 | Commit a wip branch                                                                     |
-| gam                  | git am                                                                                                                           |
-| gamc                 | git am --continue                                                                                                                |
-| gams                 | git am --skip                                                                                                                    |
-| gama                 | git am --abort                                                                                                                   |
-| git_current_branch   | Return the name of the current branch                                                                                            |
-| git_main_branch      | Returns the name of the main branch: main if it exists, master otherwise                                                   |
-| git_current_user_name | Returns the user.name config value                                                                                              |
-| git_current_user_email | Returns the user.email config value                                                                                            |
-| git_work_in_progress | Echoes a warning if the current branch is a wip                                                                                  |
+| gwip                 | Commit a wip branch                                                                                                              |
+| gwt                  | git worktree                                                                                                                     |
+| gwta                 | git worktree add                                                                                                                  |
+| gwtls                | git worktree list                                                                                                                 |
+| gwtmv                | git worktree move                                                                                                                 |
+| gwtrm                | git worktree remove
+| git_current_branch   | Return the name of the current branch                                                                                             |
+| git_main_branch      | Returns the name of the main branch: main if it exists, master otherwise                                                          |
+| git_develop_branch   | Returns the name of the develop branch: `dev`, `devel`, `development` if they exist, `develop` otherwise                          |
+| git_current_user_name | Returns the user.name config value                                                                                               |
+| git_current_user_email | Returns the user.email config value                                                                                             |
+| git_work_in_progress | Echoes a warning if the current branch is a wip                                                                                   |
 
 ### Main branch preference
 
-Like Oh-my-zsh, this repo will use `main` as your main branch instrad of master if that branch exists.
+Like Oh-my-zsh, this repo will use `main` or `trunk` as your main branch instead of master if that branch exists.
 
 ### Caveats
 

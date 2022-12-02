@@ -1,3 +1,3 @@
-function gama -w 'git am'
+function gama -w 'git am' -d 'Apply a series of patches from a mailbox Apply a series of patches from a mailbox'
   git am --abort $argv
 end

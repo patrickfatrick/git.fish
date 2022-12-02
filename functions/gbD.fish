@@ -1,3 +1,3 @@
-function gbD -w 'git branch' -d 'List, create, or delete branches'
+function gbD -w 'git branch' -d 'List, create, or delete branches List, create, or delete branches'
   git branch -D $argv
 end

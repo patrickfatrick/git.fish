@@ -1,3 +1,3 @@
-function grbd -w 'git rebase develop'
-  git rebase develop $argv
+function grbd -w 'git rebase (git_develop_branch)'
+  git rebase (git_develop_branch) $argv
 end

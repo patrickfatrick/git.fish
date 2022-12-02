@@ -1,3 +1,3 @@
-function gstu -w 'git stash' -d 'Stash away changes'
+function gstu -w 'git stash' -d 'Stash away changes Stash away changes'
   git stash --include-untracked $argv
 end

@@ -1,3 +1,3 @@
-function gcf -w 'git config' -d 'Set and read git configuration variables'
+function gcf -w 'git config' -d 'Set and read git configuration variables Set and read git configuration variables'
   git config --list $argv
 end

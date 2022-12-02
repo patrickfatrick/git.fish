@@ -1,3 +1,3 @@
-function grev -w 'git revert' -d 'Revert an existing commit'
+function grev -w 'git revert' -d 'Revert an existing commit Revert an existing commit'
   git revert $argv
 end

@@ -1,3 +1,3 @@
-function gcount -w 'git shortlog' -d 'Show commit shortlog Show commit shortlog'
+function gcount -w 'git shortlog' -d 'Show commit shortlog'
   git shortlog -sn $argv
 end

@@ -1,3 +1,3 @@
-function grbs -w 'git rebase' -d 'Forward-port local commits to the updated upstream head Forward-port local commits to the updated upstream head'
+function grbs -w 'git rebase' -d 'Reapply commit sequence on a new base'
   git rebase --skip $argv
 end

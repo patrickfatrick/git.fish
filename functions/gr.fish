@@ -1,3 +1,3 @@
-function gr -w 'git remote' -d 'Manage set of tracked repositories Manage set of tracked repositories'
+function gr -w 'git remote' -d 'Manage tracked repositories'
   git remote $argv
 end

@@ -1,3 +1,3 @@
-function gcpc -w 'git cherry-pick' -d 'Apply the change introduced by an existing commit Apply the change introduced by an existing commit'
+function gcpc -w 'git cherry-pick' -d 'Reapply a commit on another branch'
   git cherry-pick --continue $argv
 end

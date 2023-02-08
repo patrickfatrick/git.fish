@@ -1,3 +1,3 @@
-function gfa -w 'git fetch' -d 'Download objects and refs from another repository Download objects and refs from another repository'
+function gfa -w 'git fetch' -d 'Download objects from another repo'
   git fetch --all --prune $argv
 end

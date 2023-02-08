@@ -1,3 +1,3 @@
-function gf -w 'git fetch' -d 'Download objects and refs from another repository Download objects and refs from another repository'
+function gf -w 'git fetch' -d 'Download objects from another repo'
   git fetch $argv
 end

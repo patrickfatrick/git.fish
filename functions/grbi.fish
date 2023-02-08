@@ -1,3 +1,3 @@
-function grbi -w 'git rebase' -d 'Forward-port local commits to the updated upstream head Forward-port local commits to the updated upstream head'
+function grbi -w 'git rebase' -d 'Reapply commit sequence on a new base'
   git rebase -i $argv
 end

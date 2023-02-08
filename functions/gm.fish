@@ -1,3 +1,3 @@
-function gm -w 'git merge' -d 'Join two or more development histories together Join two or more development histories together'
+function gm -w 'git merge' -d 'Join multiple development histories'
   git merge $argv
 end

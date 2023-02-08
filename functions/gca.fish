@@ -1,3 +1,3 @@
-function gca -w 'git commit' -d 'Record changes to the repository Record changes to the repository'
+function gca -w 'git commit' -d 'Record changes to the repository'
   git commit -v -a $argv
 end

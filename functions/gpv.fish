@@ -1,3 +1,3 @@
-function gpv -w 'git push' -d 'Update remote refs along with associated objects Update remote refs along with associated objects'
+function gpv -w 'git push' -d 'Push changes elsewhere'
   git push -v $argv
 end

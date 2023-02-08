@@ -1,3 +1,3 @@
-function gdca -w 'git diff' -d 'Show changes between commits, commit and working tree, etc Show changes between commits, commit and working tree, etc'
+function gdca -w 'git diff' -d 'Show changes between commits or commit and working tree'
   git diff --cached $argv
 end

@@ -1,3 +1,3 @@
-function gst -w 'git status' -d 'Show the working tree status Show the working tree status'
+function gst -w 'git status' -d 'Show submodule status'
   git status $argv
 end

@@ -1,3 +1,3 @@
-function gds -w 'git diff' -d 'Show changes between commits, commit and working tree, etc Show changes between commits, commit and working tree, etc'
+function gds -w 'git diff' -d 'Show changes between commits or commit and working tree'
   git diff --staged $argv
 end
